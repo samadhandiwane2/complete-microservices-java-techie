@@ -8,4 +8,6 @@ import com.jt.ps.api.entity.Payment;
 @Repository
 public interface PaymentRepository extends JpaRepository<Payment, Integer> {
 
+	Payment findByOrderId(int orderId);
+
 }
