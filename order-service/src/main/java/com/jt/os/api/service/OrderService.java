@@ -27,7 +27,7 @@ public class OrderService {
 		payment.setOrderId(order.getId());
 		payment.setAmount(order.getPrice());
 
-		Payment paymentResponse = template.postForObject("http://localhost:8082/payment/makePayment", payment,
+		Payment paymentResponse = template.postForObject("http://PAYMENT-SERVICE/payment/makePayment", payment,
 				Payment.class);
 		responseMsg = paymentResponse.getPaymentStatus().equalsIgnoreCase("success")
 				? "Payment Processing is successful and order is placed"
